@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+ 
+
+
+    <div id="chart2">
+        <div  id="month_select">            
+        </div>
+        
+        <style>
+            .map,.bar1,.bar2,.bar3,.bar4{
+                margin-left: 30px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
+
+    <div class="map">
+    </div>
+
+    <section   style="display: grid;grid-template-columns: repeat(4,1fr);width: 90%;height: 300px ;margin-top: 20px;">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+    </section>
+
+
+    <!-- <script src="./d3js_code/initCode.js"> -->
+        <!-- // the code which I need to initialize  -->
+
+    </script>
+    <!-- <script src="http://d3js.org/d3.v4.min.js"></script> -->
+    <!-- <script src="http://d3js.org/queue.v1.min.js"></script> -->
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <!-- <script src="./d3js_code/d3-tip.js"></script> -->
+
+    <!-- <script src="./d3js_code/bubbleChart.js"></script> -->
+    <script >
+        // console.log(xhr);
+        
+        // console.log(allGroup);
+
+        
+            // const div = document.querySelector('#box')
+            // const xhr = new XMLHttpRequest()
+            // const margin = 200
+            // const svg = d3.select("svg")
+            // const width = svg.attr("width") - margin
+            // const height = svg.attr("height") - margin
+            // const xScale = d3.scaleBand().range([0, width]).padding(0.4)
+            // const yScale = d3.scaleLinear().range([height, 0])
+            
+
+        //     const g = svg.append("g")
+        //     .attr("transform","translate(" + 100 + "," + 100 + ")")
+        
+        //     //设置响应体类型
+        //     xhr.responseType = 'json'
+        //      xhr.open('GET','http://127.0.0.1:80/api/json-server/1')
+        //      xhr.send('-----') 
+        //      xhr.onreadystatechange = function(){
+        //         if(xhr.readyState === 4){
+        //             if(xhr.status >= 200 && xhr.status < 300){
+                        
+        //                 const data = xhr.response
+        //                 // console.log(xhr.response);
+                        
+                        
+
+        //                 xScale.domain(
+        //                     data.map(function(d){
+        //                         return d.year
+        //                     })
+        //                 )
+
+        //                 yScale.domain(
+        //                     [
+        //                         0,d3.max(data,d =>d.value)
+        //                     ]
+        //                 )
+
+        //                 g.append("g")
+        //                 .attr("transform", "translate(0," + height + ")")
+        //                 .call(d3.axisBottom(xScale));
+
+        //                 g.append("g")
+        //                 .call(
+        //                 d3
+        //                 .axisLeft(yScale) .tickFormat(function (d) {
+        //                 return "$" + d; })
+        //                 .ticks(10) )
+
+        //                 drawLine(data)
+                        
+        //             }
+        //         }
+        //      }
+        
+
+        
+        // // console.log(data);
+
+        // const btns = d3.selectAll('button')
+        // btns.on('click',function(){
+            
+        //         // console.log(this);
+        //         const xhr = new XMLHttpRequest()
+        //     //设置响应体类型
+        //     xhr.responseType = 'json'
+        //      xhr.open('GET','http://127.0.0.1:80/api/json-server/'+this.innerText)
+        //      xhr.send() 
+        //      xhr.onreadystatechange = function(){
+        //         if(xhr.readyState === 4){
+        //             if(xhr.status >= 200 && xhr.status < 300){
+                        
+        //                 const data = xhr.response
+        //                 // console.log(xhr.response);
+        //                  drawLine(data)
+        //             }
+        //         }
+        //      }
+            
+        // })
+
+
+        // // drawLine(data)
+
+        // drawBubble()
+        // function drawBubble(){
+
+        //     const xhr = new XMLHttpRequest()
+        //     //设置响应体类型
+        //     xhr.responseType = 'json'
+        //      xhr.open('GET','http://127.0.0.1:80/api/json-bubble/2022-2-24')
+        //      xhr.send() 
+        //      xhr.onreadystatechange = function(){
+        //         if(xhr.readyState === 4){
+        //             if(xhr.status >= 200 && xhr.status < 300){
+                        
+        //                 let dataset = xhr.response
+        //                 // console.log(xhr.response);
+        //                 var diameter = 600;
+        // var color = d3.scaleOrdinal(d3.schemeSet3);
+
+        // var bubble = d3.pack(dataset)
+        //     .size([diameter, diameter])
+        //     .padding(1.5);
+
+        // d3.select(".app").attr("border","1px solid black")
+        // .attr("width", diameter)
+        //     .attr("height", diameter)
+        // const svg2 = d3.select(".app")
+        //     .append("svg")
+        //     .attr("width", diameter)
+        //     .attr("height", diameter)
+
+        //     .attr("class", "bubble");
+
+        // var nodes = d3.hierarchy(dataset)
+        //     .sum(function(d) { return d.Count; });
+        // // console.log(d3.hierarchy(dataset));
+        // // console.log(nodes);
+        // var node = svg2.selectAll(".node")
+        //     .data(bubble(nodes).descendants())
+        //     .enter()
+        //     .filter(function(d){
+        //         return  !d.children
+        //     })
+        //     .append("g")
+        //     .attr("class", "node")
+        //     .attr("transform", function(d) {
+        //         return "translate(" + d.x + "," + d.y + ")";
+        //     });
+
+        // node.append("title")
+        // .transition()
+        //     .duration(1000)
+        //     .text(function(d) {
+        //         return d.Name + ": " + d.Count;
+        //     });
+
+        // node.append("circle")
+        // .transition()
+        //     .duration(1000)
+        //     .attr("r", function(d) {
+        //         return d.r;
+        //     })
+        //     .style("fill", function(d,i) {
+        //         return color(i);
+        //     });
+
+        // node.append("text")
+        //     .attr("dy", ".2em")
+        //     .style("text-anchor", "middle")
+        //     .text(function(d) {
+        //         // console.log('00000');
+        //         // console.log(d.r /3);
+        //         // console.log(d.data);
+        //         return d.data.Name.substring(0, d.r / 3);
+        //     })
+        //     .attr("font-family", "sans-serif")
+        //     .attr("font-size", function(d){
+        //         return d.r/5;
+        //     })
+        //     .attr("fill", "black");
+
+        // node.append("text")
+        //     .attr("dy", "1.3em")
+        //     .style("text-anchor", "middle")
+        //     .text(function(d) {
+        //         return d.data.Count;
+        //     })
+        //     .attr("font-family",  "Gill Sans", "Gill Sans MT")
+        //     .attr("font-size", function(d){
+        //         return d.r/5;
+        //     })
+        //     .attr("fill", "black");
+
+        // d3.select(self.frameElement)
+        //     .style("height", diameter + "px");
+
+                        
+        //             }
+        //         }
+        //      }
+
+
+
+        
+
+        // }
+        
+   </script>
+   <script src="./d3js_code/map.js"></script>
+
+    
+    
+</body>
+</html>
